@@ -20,8 +20,9 @@ const inputGroupElement = document.getElementById('input-group');
 const messageElement = document.getElementById('message');
 // console.log(messageElement);
 
-const inputElement = document.getElementsByTagName('input');
+const inputElement = document.querySelectorAll('input');
 
+const form = document.querySelector('#answe-form');
 let randomNumbersArray = [];
 
 let inputNumbersArray = [];
@@ -59,14 +60,23 @@ console.log(randomNumbersArray);
 
 //**************************************//
 
+
+
+
 // create form response
 
 answerFormElement.addEventListener('submit',function(e) {
     e.preventDefault();
 
     // console.log('form inviato');
-    console.log(inputElement);
-    // messageElement.innerText = 'ciao';
+    
+    for(let i = 0; i < inputElement.length; i++){
+        // console.log(inputElement[i].value)
+        inputNumbersArray.push(parseInt(inputElement[i].value));
+    
+    }
+    
+    console.log(inputNumbersArray);
 })
 
 //**************************************//
