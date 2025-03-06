@@ -20,6 +20,12 @@ const inputGroupElement = document.getElementById('input-group');
 const messageElement = document.getElementById('message');
 // console.log(messageElement);
 
+const inputElement = document.getElementsByTagName('input');
+
+let randomNumbersArray = [];
+
+let inputNumbersArray = [];
+
 //**************************************//
 
 // create countdown from 10 to 0
@@ -27,7 +33,7 @@ const messageElement = document.getElementById('message');
 let count=3;
 
 const countdownBig = setInterval(function(){
-    console.log(count);
+    // console.log(count);
     countdownElement.innerText = `${count}`;
     count --;
     if(count===-1){
@@ -42,12 +48,14 @@ const countdownBig = setInterval(function(){
 
 // create list items inside ul dispalying random numbers between 1 and 50
 
-for(let i = 0 ; i <9; i++){
+for(let i = 0 ; i <5; i++){
     const li = document.createElement("li");
     li.innerText =  Math.floor((Math.random() * 50) + 1);
     numbersListsElement.appendChild(li);
-    i++;
+    randomNumbersArray.push(li.innerText);
 }
+
+console.log(randomNumbersArray);
 
 //**************************************//
 
@@ -55,7 +63,9 @@ for(let i = 0 ; i <9; i++){
 
 answerFormElement.addEventListener('submit',function(e) {
     e.preventDefault();
+
     // console.log('form inviato');
+    console.log(inputElement);
     // messageElement.innerText = 'ciao';
 })
 
