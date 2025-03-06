@@ -48,4 +48,8 @@ for(let i = 0 ; i <9; i++){
 
 //**************************************//
 
-
+answerFormElement.addEventListener('submit',function(e) {
+    e.preventDefault();
+    console.log('form inviato');
+    
+})
