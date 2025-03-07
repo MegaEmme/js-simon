@@ -19,10 +19,11 @@ const inputGroupElement = document.getElementById('input-group');
 
 const inputElement = document.querySelectorAll('input');
 
-const form = document.querySelector('#answe-form');
+const form = document.querySelector('#answers-form');
+
 let randomNumbersArray = [];
 
-let inputNumbersArray = [];
+
 
 const messageElement = document.getElementById('message');
 // console.log(messageElement);
@@ -66,44 +67,39 @@ answerFormElement.addEventListener('submit',function(e) {
 
     e.preventDefault();
 
-    // console.log('form inviato');
-    
+    let inputNumbersArray = [];
+
     for(let i = 0; i < inputElement.length; i++){
 
-        // console.log(inputElement[i].value)
-        
-        inputNumbersArray.push(parseInt(inputElement[i].value));
-        
+            inputNumbersArray.push(parseInt(inputElement[i].value));
+
     }
-    let result = compareNumbers(randomNumbersArray,inputNumbersArray)
-    console.log(inputNumbersArray);
-    console.log(result);
+
+    // compareNumbers(randomNumbersArray,inputNumbersArray);
+    // console.log(inputNumbersArray);
+
 })
-
-
 
 //**************************************//
 
 // create function compareNumbers
 
-function compareNumbers(arrayOne,arrayTwo){
-    let count = 0;
-    for(let i = 0 ; i<arrayOne.length; i++){
-        if(arrayOne[i]===arrayTwo[i]){
-            count = 1;
-        }
-    }
-    if(count){
-        messageElement.classList.remove("text-success", "text-danger");
-        let ciao = messageElement.innerText='Hai vinto';
-        console.log(ciao);
-    } else {
-        let ciao = messageElement.innerText='Hai perso';
-        console.log(ciao);
-    }
-}
-
-
-
+// function compareNumbers(arrayOne,arrayTwo){
+//     let count = 0;
+//     for(let i = 0 ; i<arrayOne.length; i++){
+//         if(arrayOne[i]==arrayTwo[i]){
+//             count = 1;
+//         }
+//     }
+//     if(count){
+//         messageElement.classList ='text-success text-center';
+//         let ciao = messageElement.innerText='Hai vinto!';
+//         console.log(ciao);
+//     } else {
+//         let ciao = messageElement.innerText='Hai perso!';
+//         console.log(ciao);
+//     }
+// }
 
 //**************************************//
+
